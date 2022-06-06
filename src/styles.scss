@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+$redColor : red;
+$blueColor: blue;
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span{
+        color:$blueColor;
+    }
+    h1{
+        color:$redColor;
+    }
+}
