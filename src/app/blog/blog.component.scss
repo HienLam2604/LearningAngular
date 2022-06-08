@@ -1,0 +1,39 @@
+$fontSizeContent : 24px;
+$fontSizeDeatail : 18px;
+
+.blog-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .blog-content{
+        display: block;
+        width: 400px;
+        font-size: $fontSizeContent;
+        .blog-detail{
+            
+            justify-content: flex-start;
+            font-size: $fontSizeDeatail;
+            span{
+                padding-right: 20px;
+                color: black;
+            }
+            span.date-upload{
+                font-style: italic;
+            }
+            .btn-detail{
+                border: none;
+                border-radius: 5px;
+                font-weight: bold;
+                cursor: pointer;
+                background-color: cyan;
+                color: black;
+                font-size: 20px;
+            }
+            .btn-detail:hover{
+                background-color: rgb(121, 188, 210);
+                color: white;
+            }
+        }
+    }
+}

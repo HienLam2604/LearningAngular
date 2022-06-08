@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import {HomepageComponent} from './homepage/homepage.component';
 import { TodolistComponent} from './todolist/todolist.component'
-
+import {BlogComponent} from './blog/blog.component'
 const routes:Routes = [
+  {path:"blog",component:BlogComponent},
   {path:"todo",component:TodolistComponent},
-  {path: '', component:HomepageComponent}
+  {path: 'home', component:HomepageComponent}
 
 ]
 
@@ -19,5 +20,5 @@ const routes:Routes = [
   exports: [ RouterModule ]
 })
 export class AppRoutingModule { }
-export const routingComponent = [HomepageComponent,TodolistComponent]
+export const routingComponent = [HomepageComponent,TodolistComponent,BlogComponent]
 
