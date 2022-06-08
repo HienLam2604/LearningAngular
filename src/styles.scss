@@ -1,10 +1,15 @@
 $redColor : red;
 $blueColor: blue;
-$fontSize : 30px;
+$fontSize : 20px;
 %center-sth{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+nav{
+    .active{
+        color:aqua;
+    }
 }
 .title{
     @extend %center-sth;
@@ -37,14 +42,15 @@ $fontSize : 30px;
 .container{
     @extend %center-sth;
     ul{
-        display: flex;
+        padding: 0px;
+        margin: 0px;
         li{
             list-style-type: none;
         }
             span {
-                padding: 0 10px;
+                margin-left: 30px;
                 color: black;
-                font-size: $fontSize;
+                font-size: 30px;
                 cursor: pointer;
             }
             span.deleteTodo:hover{

@@ -3,15 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
-import { HomepageComponent } from './homepage/homepage.component';
-import { TodolistComponent } from './todolist/todolist.component';
+import { AppRoutingModule, routingComponent } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent,
-    TodolistComponent,
+    routingComponent
   ],
   imports: [
     BrowserModule,
