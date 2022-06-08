@@ -1,5 +1,70 @@
 $redColor : red;
 $blueColor: blue;
+$fontSize : 30px;
+%center-sth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    @extend %center-sth;
+    color: cyan;
+    font-size:40px;
+}
+.addTodo{
+    @extend %center-sth;
+    padding-bottom: 15px;
+    input{
+        font-size: $fontSize;
+                
+    }
+    button {
+        border-radius: 5px;
+        background-color: rgb(148, 148, 255);
+        font-size: $fontSize; 
+        cursor: pointer;       
+    }
+    button:hover{
+        color:white;
+        background-color: aqua;
+    }
+}
+.main{
+    @extend %center-sth;
+    display:block;
+}
+
+.container{
+    @extend %center-sth;
+    ul{
+        display: flex;
+        li{
+            list-style-type: none;
+        }
+            span {
+                padding: 0 10px;
+                color: black;
+                font-size: $fontSize;
+                cursor: pointer;
+            }
+            span.deleteTodo:hover{
+                color: rgb(22, 160, 133);
+            }
+        }
+    .content{
+        .completed{
+            text-decoration: line-through; 
+        }
+    }
+    
+}
+nav{
+    display: flex;
+    padding: 20px;
+    a{
+        margin-left: 10px;
+    }
+}
 div{
     display: flex;
     justify-content: center;

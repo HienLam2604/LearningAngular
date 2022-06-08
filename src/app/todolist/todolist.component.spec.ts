@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeroesCloneComponent } from './heroes-clone.component';
+import { TodolistComponent } from './todolist.component';
 
-describe('HeroesCloneComponent', () => {
-  let component: HeroesCloneComponent;
-  let fixture: ComponentFixture<HeroesCloneComponent>;
+describe('TodolistComponent', () => {
+  let component: TodolistComponent;
+  let fixture: ComponentFixture<TodolistComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeroesCloneComponent ]
+      declarations: [ TodolistComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HeroesCloneComponent);
+    fixture = TestBed.createComponent(TodolistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
