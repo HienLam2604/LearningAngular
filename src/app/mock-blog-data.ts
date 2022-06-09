@@ -1,3 +1,5 @@
+import {Blog} from './blog'
+export const Blogs:Blog[]=
 [{"id":1,"title":"Sweet November","content":"Corrosion of internal genitourinary organs","like":1,"dislike":1,"dateUpload":"8/5/2021"},
 {"id":2,"title":"Polite People (Kurteist fólk)","content":"Newborn health examination","like":2,"dislike":2,"dateUpload":"5/24/2022"},
 {"id":3,"title":"Vampire Hunter D: Bloodlust (Banpaia hantâ D)","content":"Toxic effect of ingested mushrooms, assault","like":3,"dislike":3,"dateUpload":"5/12/2022"},
@@ -14,7 +16,7 @@
 {"id":14,"title":"Bon Voyage","content":"Crushing injury of shoulder and upper arm, unspecified arm, subsequent encounter","like":14,"dislike":14,"dateUpload":"5/9/2022"},
 {"id":15,"title":"The Key","content":"Other specified injuries of unspecified wrist, hand and finger(s), sequela","like":15,"dislike":15,"dateUpload":"9/4/2021"},
 {"id":16,"title":"Frank","content":"Corrosion of first degree of unspecified multiple fingers (nail), not including thumb, initial encounter","like":16,"dislike":16,"dateUpload":"5/13/2022"},
-{"id":17,"title":"How I Killed My Father (a.k.a. My Father and I) (Comment j'ai tué mon Père)","content":"Strain of flexor muscle, fascia and tendon of unspecified thumb at forearm level","like":17,"dislike":17,"dateUpload":"7/6/2021"},
+{"id":17,"title":"How I Killed My Father","content":"Strain of flexor muscle, fascia and tendon of unspecified thumb at forearm level","like":17,"dislike":17,"dateUpload":"7/6/2021"},
 {"id":18,"title":"Rope","content":"Displaced fracture of base of fifth metacarpal bone. left hand","like":18,"dislike":18,"dateUpload":"4/2/2022"},
 {"id":19,"title":"Death and the Maiden","content":"Other specific arthropathies, not elsewhere classified, unspecified elbow","like":19,"dislike":19,"dateUpload":"1/6/2022"},
 {"id":20,"title":"Hamlet","content":"Premenstrual dysphoric disorder","like":20,"dislike":20,"dateUpload":"7/16/2021"}]

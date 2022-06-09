@@ -44,6 +44,7 @@ export class TodolistComponent implements OnInit {
   }
   handleItemClick(todo:todo):void{
     todo = {...todo,isComplete: !todo.isComplete};
+    this.setConfig()
     console.log(todo,this.todoList);
   }
   ngOnInit(): void {

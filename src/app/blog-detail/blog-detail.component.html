@@ -1,0 +1,9 @@
+<div class="blog-content" *ngIf="blog">
+    <h2>{{blog.title}}</h2>       
+    <p>{{blog.content}}</p>
+    <div class="blog-detail">
+        <span class="like">{{blog.like}} like</span>
+        <span class="dislike">{{blog.dislike}}dislike</span>
+        <span class="date-upload">{{blog.dateUpload}}</span>
+    </div>
+</div>

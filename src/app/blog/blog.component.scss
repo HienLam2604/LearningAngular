@@ -7,16 +7,27 @@ $fontSizeDeatail : 18px;
     flex-wrap: wrap;
     justify-content: space-around;
     .blog-content{
+        
         display: block;
         width: 400px;
+        min-height: 250px;
+        position: relative;
         font-size: $fontSizeContent;
         .blog-detail{
-            
             justify-content: flex-start;
+            align-items: flex-end;
+            position:absolute;
+            bottom:0;
             font-size: $fontSizeDeatail;
             span{
                 padding-right: 20px;
                 color: black;
+            }
+            span.like{
+                color:blue;
+            }
+            span.dislike{
+                color: red;
             }
             span.date-upload{
                 font-style: italic;
