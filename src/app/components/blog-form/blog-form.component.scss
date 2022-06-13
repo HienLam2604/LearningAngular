@@ -1,0 +1,16 @@
+$fontSize : 24px;
+.blog-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .form-blog{
+        display:block;
+        font-size: $fontSize;
+        .form-group{      
+            .form-control{
+                font-size: $fontSize;
+            }
+        }
+    }
+
+}

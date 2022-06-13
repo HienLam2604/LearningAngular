@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { BlogService} from '../blog.service'
-import { Blog } from '../blog';
+import { BlogService} from '../../services/blog.service'
+import { Blog } from '../../models/blog';
 
 @Component({
   selector: 'app-blog-detail',
@@ -13,14 +13,21 @@ export class BlogDetailComponent implements OnInit {
 
   constructor(private route:ActivatedRoute, private _blogService:BlogService) { }
  // @Input() blog?:Blog;
+  blogs:Blog[] = []
   blog?:Blog;
   ngOnInit(): void {
+    //this._blogService.getAllBLog().subscribe(data=>this.blogs=data); //  Spring boot -Fetch all data from API using service
+    //console.log(this.blogs)
     this.loadBlogDetailPage()
   }
   loadBlogDetailPage(){
     let id:any = this.route.snapshot.paramMap.get('id'); //GET id from url /blog/:id
     if(id != null){
-      this._blogService.getBlogById(parseInt(id)).subscribe(data=>{this.blog =data;console.log(data)});
+      this._blogService.getBlogById(parseInt(id))
+      .subscribe(data=>{
+        this.blog = data;
+        console.log(data);
+      });
       id = parseInt(id);
       console.log(id)
       console.log(typeof(id))

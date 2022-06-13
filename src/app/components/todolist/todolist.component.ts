@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {todo} from '../todo'
-import {todolist} from '../todolist'
+import {todo} from '../../models/todo'
+
 @Component({
   selector: 'app-todolist',
   templateUrl: './todolist.component.html',
@@ -9,18 +9,21 @@ import {todolist} from '../todolist'
 export class TodolistComponent implements OnInit {
 
   constructor() { 
+  }
+  ngOnInit(): void {
     this.loadConfig();
   }
-  message:string = '';
   id:number = 1;
-  todoList = todolist;
+  message:string = '';
+  todoList:todo[] = [];
   setConfig():void{
     localStorage.setItem("Todos",JSON.stringify(this.todoList))
   }
   loadConfig(){
-    this.todoList===null?localStorage.getItem("Todos"):this.todoList;  
+    this.todoList === null?localStorage.getItem("Todos"):this.todoList;  
   }
   handleBtnAdd():any{
+    // Check null input message
     if(this.message===''){
        return false
     }
@@ -47,7 +50,6 @@ export class TodolistComponent implements OnInit {
     this.setConfig()
     console.log(todo,this.todoList);
   }
-  ngOnInit(): void {
-  }
+
 
 }

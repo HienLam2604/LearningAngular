@@ -1,6 +1,21 @@
 $fontSizeContent : 24px;
 $fontSizeDeatail : 18px;
-
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input{
+        font-size: $fontSizeContent;
+    }
+}
+.btn-add{
+    margin-left:30px;
+    background-color: lightcyan;
+    a{
+        text-decoration: none;
+        color:black;
+    }
+}
 .blog-container{
     display: flex;
     flex-direction: row;

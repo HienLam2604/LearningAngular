@@ -1,5 +1,8 @@
-<h1 class="container">This is my blog</h1>
-<div class="blog-container">
+<div class="header">
+    <h1>This is my blog</h1>
+    <a routerLink="/blog/add">New blog</a>
+</div>
+ <div class="blog-container">
     <div class="blog-content" *ngFor="let blog of blogs;" >
         <h2 (click)="handleClickDetailBlog(blog)">{{blog.title}}</h2>       
         <p (click)="handleClickDetailBlog(blog)">{{blog.content}}</p>
