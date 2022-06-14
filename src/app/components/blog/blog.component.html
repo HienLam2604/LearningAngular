@@ -1,16 +1,24 @@
 <div class="header">
-    <h1>This is my blog</h1>
-    <a routerLink="/blog/add">New blog</a>
+  <h1>This is my blog</h1>
+  <a class="new-blog" routerLink="/blog/add"><button>New blog</button></a>
 </div>
- <div class="blog-container">
-    <div class="blog-content" *ngFor="let blog of blogs;" >
-        <h2 (click)="handleClickDetailBlog(blog)">{{blog.title}}</h2>       
-        <p (click)="handleClickDetailBlog(blog)">{{blog.content}}</p>
-        <div class="blog-detail">
-            <span class="like">{{blog.like}} like</span>
-            <span class="dislike">{{blog.dislike}} dislike</span>
-            <span class="date-upload">{{blog.dateUpload}}</span>
-            <a routerLink="/blog/{{blog.id}}" class="btn-detail" (click)="handleClickDetailBlog(blog)">Chi tiết</a>
-        </div>
+<div class="blog-container">
+  <div class="blog-content" *ngFor="let blog of blogs">
+    <h2 (click)="handleClickDetailBlog(blog)">{{ blog.title }}</h2>
+    
+    <p (click)="handleClickDetailBlog(blog)">{{ blog.content }}</p>
+    <div class="blog-detail">
+      <span class="like">{{ blog.like }} like</span>
+      <span class="dislike">{{ blog.dislike }} dislike</span>
+      <span class="date-upload">{{ blog.dateUpload }}</span>
+      <div class="btn-action">
+        <a
+          routerLink="/blog/{{ blog.id }}"
+          class="btn-detail"
+          (click)="handleClickDetailBlog(blog)"
+          >Xem</a
+        ><button class="btn-delete" (click)="deleteBlog(blog.id)">Xóa</button>
+      </div>
     </div>
+  </div>
 </div>

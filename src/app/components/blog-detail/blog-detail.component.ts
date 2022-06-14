@@ -13,11 +13,8 @@ export class BlogDetailComponent implements OnInit {
 
   constructor(private route:ActivatedRoute, private _blogService:BlogService) { }
  // @Input() blog?:Blog;
-  blogs:Blog[] = []
   blog?:Blog;
   ngOnInit(): void {
-    //this._blogService.getAllBLog().subscribe(data=>this.blogs=data); //  Spring boot -Fetch all data from API using service
-    //console.log(this.blogs)
     this.loadBlogDetailPage()
   }
   loadBlogDetailPage(){

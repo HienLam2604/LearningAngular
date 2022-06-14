@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 import { Blog } from '../../models/blog';
 import { BlogService } from '../../services/blog.service';
 
-//import * as data from '../mock-blog-data.json'
-
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -13,15 +11,25 @@ import { BlogService } from '../../services/blog.service';
 export class BlogComponent implements OnInit {
   constructor(private _blogService: BlogService, private router: Router) {} // Init service
   ngOnInit(): void {
-    this._blogService.getAllBLog().subscribe((data) => (this.blogs = data)); // Fetch all data from API using service
-
-    this._blogService.getAllProduct().subscribe((data) => console.log(data)); // Java Spring - Rest API
+    this.getAllBLog()
   }
   blogs: Blog[] = [];
   selectedBlog?: Blog;
-
+  status: string = '';
+  getAllBLog(){
+    this._blogService.getAllBLog().subscribe((data) => (this.blogs = data)); // Fetch all data from API using service
+  }
   handleClickDetailBlog(blog: Blog) {
     this.selectedBlog = blog;
     this.router.navigate([`blog/${blog.id}`]);
   }
-}
+
+  deleteBlog(id: number) {
+    console.log(id);
+    if (confirm('Delete ?')) {
+      this._blogService
+        .deleteBlog(id)
+        .subscribe(() => (this.status = 'Deleted success!'));
+      this.getAllBLog()
+    }
+}}

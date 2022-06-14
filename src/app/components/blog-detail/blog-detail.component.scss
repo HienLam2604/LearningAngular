@@ -1,0 +1,25 @@
+$fontSizeContent:30px;
+$fontSizeDeatail:24px;
+    .blog-content{      
+        display: block;
+        position: relative;
+        font-size: $fontSizeContent;
+        .blog-detail{
+            justify-content: flex-start;
+            align-items: flex-end;
+            font-size: $fontSizeDeatail;
+            span{
+                padding-right: 20px;
+                color: black;
+            }
+            span.like{
+                color:blue;
+            }
+            span.dislike{
+                color: red;
+            }
+            span.date-upload{
+                font-style: italic;
+            }
+        }
+    }   

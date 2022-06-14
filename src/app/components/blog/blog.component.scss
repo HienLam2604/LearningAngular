@@ -8,13 +8,11 @@ $fontSizeDeatail : 18px;
         font-size: $fontSizeContent;
     }
 }
-.btn-add{
-    margin-left:30px;
-    background-color: lightcyan;
-    a{
-        text-decoration: none;
-        color:black;
-    }
+.new-blog{
+    text-decoration: none;
+    color:black;
+    margin-left: 20px;
+    font-size:$fontSizeContent;
 }
 .blog-container{
     display: flex;
@@ -47,19 +45,25 @@ $fontSizeDeatail : 18px;
             span.date-upload{
                 font-style: italic;
             }
-            .btn-detail{
-                border: none;
-                border-radius: 5px;
-                font-weight: bold;
-                cursor: pointer;
-                background-color: cyan;
-                color: black;
-                font-size: 20px;
+            .btn-action{
+                .btn-detail{
+                    border: none;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    background-color: cyan;
+                    color: black;
+                    margin-right: 10px;
+                    text-decoration: none;
+                    font-size: 20px;
+                }
+                .btn-detail:hover{
+                    background-color: rgb(121, 188, 210);
+                    color: white;
+                }
             }
-            .btn-detail:hover{
-                background-color: rgb(121, 188, 210);
-                color: white;
-            }
+            
+        
         }
     }
 }

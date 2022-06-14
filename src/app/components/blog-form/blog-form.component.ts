@@ -8,13 +8,10 @@ import { BlogService } from '../../services/blog.service';
   styleUrls: ['./blog-form.component.scss'],
 })
 export class BlogFormComponent implements OnInit {
-  constructor(private blogService: BlogService) {}
+  constructor(private blogService: BlogService, private route: Router) {}
 
-  ngOnInit(): void {
-    this.blogService.getAllBLog().subscribe((data) => (this.blogs = data));
-  }
+  ngOnInit(): void {}
 
-  blogs: Blog[] = [];
   newBlog?: Blog;
   addBlog(result: Blog) {
     let date = new Date();
@@ -29,7 +26,7 @@ export class BlogFormComponent implements OnInit {
         date.getMonth() + 1
       }/${date.getDate()}/${date.getFullYear()}`,
     };
-    this.blogs = [this.newBlog, ...this.blogs];
-    console.log('Submited: ' + JSON.stringify(this.newBlog));
+    this.blogService.addNewBlog(this.newBlog).subscribe((data)=>{'Submited: ' + JSON.stringify(data)});
+    this.route.navigate(['blog']);
   }
 }
