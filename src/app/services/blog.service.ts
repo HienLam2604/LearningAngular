@@ -6,7 +6,7 @@ import { Blog } from '../models/blog';
 import { environment } from 'src/environments/environment';
 
 const baseUrl = `${environment.apiUrl}`; // http://localhost:4200
-const restFullApiUrl = `${environment.restApiUrl}`; // http://localhost:8080/api/v1/blog
+const restFullApiUrl = `${environment.restApiUrl}`; //[RestAPI] http://localhost:8080/api/v1/blog
 
 @Injectable({
   providedIn: 'root',
@@ -44,9 +44,7 @@ export class BlogService {
   getBlogById(id: number): Observable<Blog> {
     const urlBlogId = `${restFullApiUrl}/${id}`;
     console.log(urlBlogId);
-    return this._http.get<Blog>(urlBlogId).pipe(
-      catchError(this.handleError)
-    );
+    return this._http.get<Blog>(urlBlogId).pipe(catchError(this.handleError));
   }
 
   addNewBlog(newBlog: Blog): Observable<Blog> {
@@ -56,7 +54,7 @@ export class BlogService {
       .pipe(catchError(this.handleError));
   }
 
-  deleteBlog(id: number):Observable<Blog> {
+  deleteBlog(id: number): Observable<Blog> {
     const urlBlogId = `${restFullApiUrl}/${id}`;
     return this._http
       .delete<Blog>(urlBlogId)

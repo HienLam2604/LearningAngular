@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   restApiUrl: 'http://localhost:8080/api/v1/blog', // Restfull API
   apiUrl: 'http://localhost:4200',
+  SECRET_KEY: 'hector',
 };
 
 /*

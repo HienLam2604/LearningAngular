@@ -1,0 +1,10 @@
+$fontSize :24px;
+.login-form{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    input{
+        display: block;
+        font-size:$fontSize;
+    }
+}

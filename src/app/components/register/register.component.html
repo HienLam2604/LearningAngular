@@ -1,0 +1,15 @@
+<h1>Register</h1>
+<div class="register-form">
+  {{ registerForm.value | json }}
+  <form
+    action=""
+    #registerForm="ngForm"
+    (ngSubmit)="register(registerForm.value)"
+  >
+    <input class="form-control" required type="text" ngModel name="username" />
+    <input class="form-control" required type="text" ngModel name="password" />
+    <button type="submit" [disabled]="!registerForm.form.valid">
+      Register
+    </button>
+  </form>
+</div>
