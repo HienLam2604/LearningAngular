@@ -8,11 +8,12 @@ export class AuthGuard implements CanActivate {
     private authService: AuthenticationService
   ) {}
 
-  canActivate() {
+  canActivate(): boolean {
     // Have token and logged
     if (localStorage.getItem('access_token') === null) {
       window.alert('Access not allowed!');
       this.router.navigate(['login']);
+      return false;
     }
 
     // not logged in so redirect to login page

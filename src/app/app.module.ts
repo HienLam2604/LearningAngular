@@ -12,6 +12,9 @@ import { AuthenticationService } from './services/authentication.service';
 import { HttpInterceptorServiceService } from './services/http-interceptor-service.service';
 import { UserComponent } from './components/user/user.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { AuthGuard } from './guard/auth.guard';
+import { RoleGuard } from './guard/role.guard';
+import { PaginationControlsComponent } from './components/pagination-controls/pagination-controls.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +24,7 @@ import { AdminComponent } from './components/admin/admin.component';
     RegisterComponent,
     UserComponent,
     AdminComponent,
+    PaginationControlsComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +34,8 @@ import { AdminComponent } from './components/admin/admin.component';
   ],
   providers: [
     BlogService,
+    AuthGuard,
+    RoleGuard,
     AuthenticationService,
     {
       provide: HTTP_INTERCEPTORS,

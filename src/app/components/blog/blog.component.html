@@ -5,7 +5,6 @@
 <div class="blog-container">
   <div class="blog-content" *ngFor="let blog of blogs">
     <h2 (click)="handleClickDetailBlog(blog)">{{ blog.title }}</h2>
-    
     <p (click)="handleClickDetailBlog(blog)">{{ blog.content }}</p>
     <div class="blog-detail">
       <span class="like">{{ blog.like }} like</span>
@@ -22,3 +21,10 @@
     </div>
   </div>
 </div>
+
+<app-pagination-controls
+  (getAllBLog)="getAllBLog($event)"
+  [totalPage]="totalPage"
+  [totalPageLength]="totalPageLength"
+  [currentPage]="currentPage1"
+></app-pagination-controls>

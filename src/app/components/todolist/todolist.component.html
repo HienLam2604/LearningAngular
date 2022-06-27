@@ -1,20 +1,31 @@
 <div class="main">
-<h1 class="title">Todo List!</h1>
-<div class="addTodo">
-    <input [(ngModel)]="message" (keyup.enter)="handleBtnAdd()" type="text" autofocus>
+  <h1 class="title">Todo List!</h1>
+  <div class="addTodo">
+    <input
+      [(ngModel)]="message"
+      (keyup.enter)="handleBtnAdd()"
+      type="text"
+      autofocus
+    />
     <button type="button" (click)="handleBtnAdd()">Thêm</button>
     <button type="button" (click)="handleBtnListDel()">Xóa mục đã chọn</button>
-</div>
+  </div>
 
-<div class="container" *ngFor="let todo of todoList;let i=index">
+  <div class="container" *ngFor="let todo of todoList; let i = index">
     <div class="content">
-        <ul>
-            <li>
-                <input type="checkbox" [(ngModel)]="todo.isComplete" >
-                <span [(ngModel)]="todo.isComplete" [ngClass]="{'completed':todo.isComplete}" (click)="handleItemClick(todo)" id={{todo.id}}>{{todo.text}}</span>
-                <span class="deleteTodo"(click)="handleBtnItemDel(i)">X</span>
-            </li>
-        </ul>
-    </div> 
-</div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <input type="checkbox" [(ngModel)]="todo.isComplete" />
+          <span
+            [(ngModel)]="todo.isComplete"
+            [ngClass]="{ completed: todo.isComplete }"
+            (click)="handleItemClick(todo)"
+            id="{{ todo.id }}"
+            >{{ todo.text }}</span
+          >
+          <span class="deleteTodo" (click)="handleBtnItemDel(i)">X</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

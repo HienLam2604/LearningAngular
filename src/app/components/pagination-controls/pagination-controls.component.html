@@ -1,0 +1,24 @@
+<nav class="d-flex justify-content-center" aria-label="Hector ITC">
+  <ul class="pagination">
+    <li
+      [ngClass]="currentPage === 1 ? 'page-item disabled' : 'page-item'"
+      (click)="prevPage()"
+    >
+      <a class="page-link">Previous</a>
+    </li>
+    <li
+      (click)="selectedPage(i)"
+      *ngFor="let page of totalPage; let i = index"
+      [ngClass]="currentPage == i + 1 ? 'page-item active' : 'page-item'"
+    >
+      <a class="page-link">{{ i + 1 }}</a>
+    </li>
+    <li
+      [ngClass]="
+        currentPage === totalPageLength ? 'page-item disabled' : 'page-item'
+      "
+    >
+      <a class="page-link" (click)="nextPage()">Next</a>
+    </li>
+  </ul>
+</nav>

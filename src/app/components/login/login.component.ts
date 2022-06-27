@@ -12,7 +12,14 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.checkLogin();
+  }
+  checkLogin() {
+    if (localStorage.getItem('access_token')) {
+      this.router.navigate(['']);
+    }
+  }
   login(result: any) {
     let username: string = result.username;
     let password: string = result.password;

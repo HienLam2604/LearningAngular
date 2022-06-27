@@ -31,9 +31,9 @@ export class BlogService {
   }
 
   // GET all blog in DB
-  getAllBLog(): Observable<Blog[]> {
+  getAllBLog(params: any): Observable<any> {
     return this._http
-      .get<Blog[]>(restFullApiUrl) //Fetch data
+      .get<Blog[]>(restFullApiUrl, { params }) //Fetch data
       .pipe(
         // Handle error
         catchError(this.handleError)

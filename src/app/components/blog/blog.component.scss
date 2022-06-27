@@ -19,10 +19,10 @@ $fontSizeDeatail : 18px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+
     .blog-content{
-        
         display: block;
-        width: 400px;
+        width: 450px;
         min-height: 250px;
         position: relative;
         font-size: $fontSizeContent;

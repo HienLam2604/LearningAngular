@@ -1,5 +1,5 @@
 <div class="container">
-  <div *ngIf="username; else elseBlock">
+  <div *ngIf="username !== ''; else elseBlock">
     <h1>Welcome {{ username }}</h1>
     <button class="btn btn-primary" (click)="logOut()">Logout</button>
   </div>
