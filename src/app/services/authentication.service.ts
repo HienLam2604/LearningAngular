@@ -4,12 +4,14 @@ import {
   HttpClient,
   HttpErrorResponse,
   HttpHeaders,
+  HttpRequest,
 } from '@angular/common/http';
 import { EMPTY, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { catchError, map } from 'rxjs/operators';
 
 const AUTH_API = 'http://localhost:8080/auth';
+const role: any = [];
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
@@ -20,11 +22,8 @@ export class AuthenticationService {
   constructor(private _http: HttpClient, private router: Router) {}
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof Error) {
-      // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error.message);
     } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong,
       console.error(
         `Backend returned code ${error.status}, body was: ${error.error}`
       );
@@ -41,12 +40,15 @@ export class AuthenticationService {
       map((data) => {
         let token = 'Bearer ' + data.jwt;
         let username = data.username;
+        let roles = data.roles;
         localStorage.setItem('access_token', token);
         localStorage.setItem('username', username);
+        for (let i = 0; i < roles.length; i++) role.push(roles[i]);
+        console.log(data);
+        console.log(role);
         return data;
       })
     );
-    //catchError(this.handleError));
   }
   getToken() {
     return localStorage.getItem('access_token');
@@ -55,10 +57,15 @@ export class AuthenticationService {
     let authToken = localStorage.getItem('access_token');
     return authToken !== null ? true : false;
   }
+  isAdmin() {
+    return this.isLoggedIn() && role.includes('ROLE_ADMIN');
+  }
   logOut() {
     let removeToken = localStorage.removeItem('access_token');
-    if (removeToken == null) {
-      this.router.navigate(['']);
+    let removeToken1 = localStorage.removeItem('username');
+    role.splice(0, role.length);
+    if (removeToken == null && removeToken1 == null) {
+      this.router.navigate(['/login']);
     }
   }
 

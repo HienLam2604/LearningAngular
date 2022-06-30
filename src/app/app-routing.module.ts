@@ -30,11 +30,23 @@ const routes: Routes = [
       expectedRole: 'admin',
     },
   },
+  {
+    path: 'customers',
+    loadChildren: () =>
+      import('./components/customers/customers.module').then(
+        (m) => m.CustomersModule
+      ),
+  },
 ];
 
 @NgModule({
   declarations: [],
-  imports: [RouterModule.forRoot(routes), CommonModule],
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+    }),
+    CommonModule,
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

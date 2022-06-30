@@ -6,9 +6,7 @@ import { AuthenticationService } from '../services/authentication.service';
 export class RoleGuard implements CanActivate {
   constructor(public auth: AuthenticationService, public router: Router) {}
   canActivate(): boolean {
-    const expectedRole = 'admin';
-    const role = localStorage.getItem('username');
-    if (!this.auth.isLoggedIn() || role !== expectedRole) {
+    if (!this.auth.isLoggedIn() || !this.auth.isAdmin()) {
       this.router.navigate(['']);
       return false;
     }

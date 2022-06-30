@@ -30,7 +30,7 @@ export class BlogComponent implements OnInit {
       this.params[`title`] = search;
     }
     if (page) {
-      this.params[`page`] = page - 1;
+      this.params[`page`] = page - 1; // array start at 0
     }
     if (pageSize) {
       this.params[`size`] = pageSize;
